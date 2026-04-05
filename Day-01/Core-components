@@ -1,0 +1,21 @@
+Github actions has three core components namely,
+
+1. Workflow 
+
+ -  An automated process capable of doing one or more Jobs
+ -  Each workflow can have an optional name and keyword
+
+2. Jobs
+
+ -  Jobs are building blocks of a workflow there can be one or more jobs inside a workflow
+ -  Each job is associated with a runner (github hosted or self hosted)
+
+
+3. Steps
+
+ -  Steps in github actions are individual tasks that makeup a job
+
+Actions
+
+    Actions within github workflows are pre-built, reusable automation components designed for a specific tasks.
+    Actions also facilitate integration with third-party tools and services, therefore enhancing your project's automation and capabilities.
