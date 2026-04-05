@@ -14,4 +14,10 @@ jobs:
 
             - name: list all files
               run: ls -la
-
+ 
+            - name: multi-line command usage
+              run : | 
+                echo $DATE
+                cat README.md
+                echo "multi line command needs pipe symbol"
+                
