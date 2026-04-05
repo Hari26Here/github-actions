@@ -17,8 +17,8 @@ jobs:
  
             - name: multi-line command usage
               run : | 
-                DATE =$(date)
-                echo "Today's date is $(DATE)"
+                date
+                echo "Today's date is $(date)"
                 cat README.md
                 echo "multi line command needs pipe symbol"
                 
