@@ -1,0 +1,48 @@
+The github runners are VM's that are hosted and maintained by github. By default these github runners we use don't have access to the repository codes where they are running on. To do that we need to use, "Actions"
+
+There are github verified actions and third-party verified actions are also available
+
+github verified actions are identified with a tick mark
+    
+Actions are defined in the workflows in three ways, 
+
+      - Tags (3.4.6) (major_version.minor_version. patch_version)
+      - Branch (main) (uses specific branch code any changes pushed to the branch will affect the workflow)
+      - sha Values ( immutable values which are mostly preferred)
+
+Actions can be checked out in the "github marketplace".
+
+Github Actions verified 
+
+    "uses: actions/checkout@v6"
+*****    primary purpose:  The main purpose of this, is to clone your repo code inside github runners     *****
+
+**  It checks out the exact commit that triggered the workflow  **
+    For a push event → it checks out that commit
+    For a PR event → it may checkout a merge commit (depends on config)
+
+**  It sets up authentication automatically  **
+    This allows:
+        Cloning private repos
+        Accessing submodules
+        Making authenticated Git operations
+
+**  It configures Git properly inside the runner  **
+    It sets:
+        Git user/email
+        Safe directory config (important security fix in recent Git versions)
+        Credential helpers
+
+**  Security hardening  **
+    It prevents:
+        Credential leakage
+        Unsafe repo access
+        Git directory spoofing
+
+** Handles PR merge behavior **
+
+    For PRs:
+        It may checkout a temporary merge commit
+    This ensures:
+        Your code works when merged into target branch
+        Helps in preventing broken merges

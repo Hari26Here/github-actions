@@ -6,6 +6,9 @@ jobs:
     first-job:
         runs-on: ubuntu-latest
         steps:
+
+            - name: clone repo inside runner
+              uses: actions/checkout@v6
             - name: welcome message
               run: echo "Welcome to github actions"
 
