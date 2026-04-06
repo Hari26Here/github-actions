@@ -5,3 +5,6 @@ To use multi-line commands use "|"
 Always install the software inside the runner before executing software related commands
 
 If there are many workflows since "on: push" would trigger all the workflows we can disable the specific workflow and run the required one alone.
+
+
+we can execute shell script inside the runner too. for the shell scripts to run it should have an "+x" permission always add this to your shell script inside the workflow
