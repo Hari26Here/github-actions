@@ -1,0 +1,5 @@
+To add new workflows we need to create a new .yml files inside the .github/workflows directory.
+
+To use multi-line commands use "|"
+
+Always install the software inside the runner before executing software related commands
