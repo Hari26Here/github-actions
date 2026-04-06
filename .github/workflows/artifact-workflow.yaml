@@ -18,7 +18,7 @@ jobs:
 
     test-job1:
         needs: build-job1
-        runs-on: ubuntu-lateset
+        runs-on: ubuntu-latest
         steps:
 
           - name: rest period
