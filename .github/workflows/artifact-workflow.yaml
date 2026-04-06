@@ -8,7 +8,7 @@ jobs:
         steps:
           - name: ascii cowsay installation
             run: |
-              sudo apt-gt install cowsay -y
+              sudo apt-get install cowsay -y
 
           - name: generate ascii art
             run: cowsay -f dragon "I am the dragon king" >> dragon.txt
