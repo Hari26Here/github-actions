@@ -20,6 +20,9 @@ jobs:
         needs: build-job1
         runs-on: ubuntu-lateset
         steps:
+
+          - name: rest period
+            run: sleep 10
           - name: searching file 
             run: grep -i "dragon" dragon.txt
 
