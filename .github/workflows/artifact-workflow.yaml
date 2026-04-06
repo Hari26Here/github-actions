@@ -16,18 +16,36 @@ jobs:
           - name: output-job-1
             run: echo "ascii artwork generated"
 
+          - name: uploading artifacts
+            uses: actions/upload-artifact@v4
+            with:
+                name: dragon
+                path: dragon.txt
+
+          - name: artifact uploaded
+            run: echo "artifact uploaded"
+
+
     test-job1:
         needs: build-job1
         runs-on: ubuntu-latest
         steps:
 
-          - name: rest period
-            run: sleep 10
+          - name: download artifact inside runner
+            uses: actions/download-artifact@v8
+            with:
+                name: dragon
+        
+          - name: artifact downloaded
+            run: echo "artifact downloaded from build-job1"
+        
           - name: searching file 
             run: grep -i "dragon" dragon.txt
 
           - name: test for artwork
             run: echo "artwork file present"
+
+          
 
     deploy-job1:
         needs: 
@@ -35,9 +53,19 @@ jobs:
             - test-job1
         runs-on: ubuntu-latest
         steps:
-            - name: viewing art file
-              run: cat dragon.txt
+
+           - name: download artifact inside runner
+             uses: actions/download-artifact@v8
+             with:
+                name: dragon
+
+           - name: artifact downloaded
+             run: echo "artifact downloaded from build-job1"
+        
+
+           - name: viewing art file
+             run: cat dragon.txt
             
-            - name: artfile deployed
-              run: echo "artwork deployed on runner"
+           - name: artfile deployed
+             run: echo "artwork deployed on runner"
               
