@@ -1,6 +1,15 @@
+
+****   WORKFLOW    *****
 name
 on
+
+*****   JOBS    *****
 jobs
+needs
 runs-on
+
+
+*******   STEPS   *****
+name
 uses
 run

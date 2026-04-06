@@ -1,0 +1,34 @@
+name: multi-job-pipeline-1
+
+on: push 
+
+jobs:
+    art-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: ascii-art-job
+            run: | 
+               sudo apt-get install cowsay -y
+               cowsay -f dragon "dragons are our best friend" >> dragon.txt
+
+          - name: check art job generation
+            run : | 
+              grep -i "dragon" dragon.txt
+
+          - name: print the art
+            run: cat dragon.txt
+
+    script-job:
+        needs: art-job
+        runs-on: ubuntu-latest
+        steps: 
+            - name: checkout repo code
+              uses: actions/checkout@v6
+            
+            - name: executing test script
+              run: | 
+                chmod +x test.sh
+                ./test.sh
+
+            - name: script-job-check
+              run: echo "script-job executed successfully"

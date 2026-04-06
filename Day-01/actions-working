@@ -8,3 +8,4 @@ If there are many workflows since "on: push" would trigger all the workflows we 
 
 
 we can execute shell script inside the runner too. for the shell scripts to run it should have an "+x" permission always add this to your shell script inside the workflow
+
