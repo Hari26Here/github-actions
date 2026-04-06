@@ -3,3 +3,5 @@ To add new workflows we need to create a new .yml files inside the .github/workf
 To use multi-line commands use "|"
 
 Always install the software inside the runner before executing software related commands
+
+If there are many workflows since "on: push" would trigger all the workflows we can disable the specific workflow and run the required one alone.
