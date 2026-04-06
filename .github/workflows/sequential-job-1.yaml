@@ -1,4 +1,4 @@
-name: multi-job-pipeline-1
+name: sequential-job-pipeline-1
 
 on: push 
 

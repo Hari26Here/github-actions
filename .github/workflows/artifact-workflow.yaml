@@ -1,0 +1,40 @@
+name: artifact-workflow-pipeline
+
+on: push
+
+jobs:
+    build-job1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: ascii cowsay installation
+            run: |
+              sudo apt-gt install cowsay -y
+
+          - name: generate ascii art
+            run: cowsay -f dragon "I am the dragon king" >> dragon.txt
+
+          - name: output-job-1
+            run: echo "ascii artwork generated"
+
+    test-job1:
+        needs: build-job1
+        runs-on: ubuntu-lateset
+        steps:
+          - name: searching file 
+            run: grep -i "dragon" dragon.txt
+
+          - name: test for artwork
+            run: echo "artwork file present"
+
+    deploy-job1:
+        needs: 
+            - build-job1
+            - test-job1
+        runs-on: ubuntu-latest
+        steps:
+            - name: viewing art file
+              run: cat dragon.txt
+            
+            - name: artfile deployed
+              run: echo "artwork deployed on runner"
+              
