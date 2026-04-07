@@ -1,4 +1,4 @@
-name: events with manual trigger
+name: exploring repo level variables and secrets
 
 on: workflow_dispatch
 

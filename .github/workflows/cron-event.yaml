@@ -1,4 +1,4 @@
-name: events with cron
+name: exploring repo level variables and secrets
 
 on: 
     schedule:
