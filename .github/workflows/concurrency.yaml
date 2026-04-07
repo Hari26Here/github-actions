@@ -20,6 +20,7 @@ jobs:
         concurrency: 
             group: production deployment
             cancel-in-progress: true  # If true new event triggered will progress and the old event will be cancelled
+             # If false new event will be in waiting until the old event completed
         runs-on: ubuntu-latest
         steps:
           - name: docker run
