@@ -10,3 +10,9 @@ If there are many workflows since "on: push" would trigger all the workflows we 
 we can execute shell script inside the runner too. for the shell scripts to run it should have an "+x" permission always add this to your shell script inside the workflow
 
 Parallel jobs are default when running multi-jobs pipeline to make the jobs sequential always use "needs" syntax
+
+Environment variables can be used on three levels namely,
+
+ step level
+ job level
+ workflow level
