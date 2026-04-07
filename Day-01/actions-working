@@ -11,8 +11,16 @@ we can execute shell script inside the runner too. for the shell scripts to run 
 
 Parallel jobs are default when running multi-jobs pipeline to make the jobs sequential always use "needs" syntax
 
-Environment variables can be used on three levels namely,
+variables can be used on three levels namely,
 
  step level
  job level
  workflow level
+
+ workflow level variables can be accessed by one workflow at a time. so if we want other workflows in the repository to access the variables
+ we need to setup repository level variables
+
+variables and secrets can be stored in github under settings and secrets and variables sections
+
+********* variables and secrets can be stored on organizational level, repo level and environment level  **********
+
