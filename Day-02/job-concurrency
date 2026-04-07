@@ -1,0 +1,9 @@
+If a workflow is triggered based on a event and suddenly another event also triggered the workflow job-concurrency 
+helps in which job to run which to skip
+
+concurrency can be set on workflow level as well as job level
+
+concurrency has two required parameters
+
+* group
+* cancel-in-progress
