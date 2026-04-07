@@ -25,3 +25,6 @@ jobs:
         steps:
           - name: docker run
             run: echo "docker run -d -p 8080:80 ${{ vars.CONTAINER_REGISTRY}}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:latest"
+
+          - name: sleep
+            run: sleep 200
